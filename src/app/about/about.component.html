@@ -1,1 +1,12 @@
-<p>about works!</p>
+<!-- <pre *ngIf="recommended"> {{recommended | json }}</pre> -->
+<div *ngIf="recommended"> 
+    <h2>Our locations: </h2>
+    <ul> 
+        <li *ngFor = "let location of recommended">
+            {{location.name}} at {{location.address1}}, {{location.address2}}
+        </li>
+    </ul>
+</div> 
+
+
+
