@@ -80,19 +80,55 @@
     <mat-card-content>
       <h2> Search your pizza </h2>
       <form class="search-form">
-        <mat-form-field class="example-full-width">
-          <mat-label>Favorite Pizza</mat-label>
-          <input matInput placeholder="Ex. Pizza" value="Margerita">
+        
+        
+        <mat-form-field>
+          <mat-label>Select your Pizza</mat-label>
+          <mat-select disableRipple>
+            <mat-option value="1"> {{pizza[0].vendor}} </mat-option>
+            <mat-option value="2"> {{pizza[1].vendor}} </mat-option>
+            <mat-option value="3"> {{pizza[2].vendor}} </mat-option>
+          </mat-select>
         </mat-form-field>
 
     
-        <mat-form-field class="example-full-width">
-          <mat-label>Choose Size </mat-label>
-          <input matInput placeholder="Size" value="Small">
+        <mat-form-field>
+          <mat-label>Select Size</mat-label>
+          <mat-select disableRipple>
+            <mat-option value="1"> {{size[0]}} </mat-option>
+            <mat-option value="2"> {{size[1]}} </mat-option>
+            <mat-option value="3"> {{size[2]}} </mat-option>
+          </mat-select>
         </mat-form-field>
+
+
+        <mat-form-field>
+          <mat-label>Select Location</mat-label>
+          <mat-select disableRipple>
+            <mat-option value="1"> {{location[0]}} </mat-option>
+            <mat-option value="2"> {{location[1]}} </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+
+        <mat-form-field>
+          <mat-label>Select Type of delivery</mat-label>
+          <mat-select disableRipple>
+            <mat-option value="1"> {{delivery[0]}} </mat-option>
+            <mat-option value="2"> {{delivery[1]}} </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+
       </form>
     </mat-card-content>
+    <mat-card-actions>
+      <button mat-button> Order now ! </button>
+    </mat-card-actions>
   </mat-card>
 </div> 
+
+
+
 
 
