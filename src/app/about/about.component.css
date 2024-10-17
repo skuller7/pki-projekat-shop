@@ -1,3 +1,9 @@
 ul {
     font-size: xx-large;
 }
+
+.container {
+    background-image: url('../../../public/assets/img/loginTest.jpeg');
+    background-size: cover;
+    height: 50vw;
+}
