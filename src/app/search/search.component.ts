@@ -24,11 +24,11 @@ export class SearchComponent implements OnInit{
   
   public qMovieName: string | null = null
   public qMovieType: string | null = null
-  public qMovieDuration: any | null = null
+  public qMovieDuration: any | any = null
   public qMovieDirector: string | null = null
   public qMovieActors: string | null = null
-  public qMoviePrice: any | null = null
-  public qMovieRating: any | null = null
+  public qMoviePrice: any | any = null
+  public qMovieRating: any | any = null
 
 
   constructor (
@@ -38,18 +38,21 @@ export class SearchComponent implements OnInit{
   
   ngOnInit(): void {
     this.route.queryParams.subscribe(params=>{
-      this.qMovieName = params['movieName']
-      this.qMovieType = params['movieType']
-      this.qMovieDuration = params['movieDuration']
-      this.qMovieDirector = params['movieDirector']
-      this.qMovieActors = params['movieActors']
-      this.qMoviePrice = params['moviePrice']
-      this.qMovieRating = params['movieRating']
 
+      this.qMovieName = params['movieName'];
+      this.qMovieType = params['movieType'];
+      this.qMovieDuration = params['movieDuration'];
+      this.qMovieDirector = params['movieDirector'];
+      this.qMovieActors = params['movieActors'];
+      this.qMoviePrice = params['moviePrice'];
+      this.qMovieRating = params['movieRating'];
 
       // console.log(params['movieName'], params['movieType'])
-    })
 
+
+    });
+
+    
     this.movieName = this.dataService.getmovieName()
     this.movieType = this.dataService.getmovieType()
     this.movieDuration = this.dataService.getmovieDuration()
@@ -59,6 +62,9 @@ export class SearchComponent implements OnInit{
     this.movieRating = this.dataService.getmovieRating()
 
   }
+
+  
+
 
 
 }
