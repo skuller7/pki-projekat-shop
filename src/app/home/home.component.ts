@@ -7,6 +7,7 @@ import { JsonPipe } from '@angular/common';
 import {MatInputModule} from '@angular/material/input';
 import { MatCardActions } from '@angular/material/card';
 import {MatSelectModule} from '@angular/material/select';
+import { DataService } from '../data.service';
 
 
 
@@ -22,21 +23,34 @@ import {MatSelectModule} from '@angular/material/select';
 export class HomeComponent {
   typesOfAnimation = typesOfAnimations // Select from ENUM type of animations
 
-  public movieName: string [] = ['Batman', 'John Wick', 'League of Justice']
-
-  public movieType: string [] = ['Comedy', 'Drama', 'Action', 'Sci-fi']
-
-  public movieDuration: any [] = [100, 120, 140, 160, 180, 200]
-
-  public movieDirector: string [] = ['Martin Scorsese', 'Sam Esmail', 'Christopher Nolan', 'Joel Coen', 'Clint Eastwood', 'Peter Jackson']
-
-  public movieActors: string [] = ['Rami Malek', 'Bryan Cranston', 'Dean Norris', 'Christian Slater', 'Steve Carrel', 'Rainn Wilson', 'Joaquin Phoenix', 'Eddie Murphy']
-
-  public moviePrice: any [] = [500, 600, 700, 800, 1000, 1200]
-
-  public movieRating: any [] = [1.0, 2.0, 3.0, 4.0, 5.0]
+  private dataService: DataService
+  public movieName: string [] = []
+  public movieType: string [] = []
+  public movieDuration: any [] = []
+  public movieDirector: string [] = []
+  public movieActors: string [] = []
+  public moviePrice: any [] = []
+  public movieRating: any [] = []
 
 
+  constructor() {
+    this.dataService = new DataService()
+  }
+
+  ngOnInit(): void{
+    this.movieName = this.dataService.getmovieName()
+    this.movieType = this.dataService.getmovieType()
+    this.movieDuration = this.dataService.getmovieDuration()
+    this.movieDirector = this.dataService.getmovieDirector()
+    this.movieActors = this.dataService.getmovieActors()
+    this.moviePrice = this.dataService.getmoviePrice()
+    this.movieRating = this.dataService.getmovieRating()
+
+  }
+  
+  
+  
+  
   // public size: string [] = ['Small', 'Medium', 'Large']
   
   // public location: string [] = ['Kungsgatan 1, 111 43', 'Långholmsgatan 34, 117 33']
