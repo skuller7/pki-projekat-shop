@@ -1,0 +1,27 @@
+.example-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+.search-card {
+    width: 60%;
+    margin: auto;
+    margin-top: 100px;
+}
+
+
+h2 {
+    color: white;
+}
+
+.example-full-width {
+    width: 100%;
+  }
+
+  .search-form {
+    display: flex;
+    flex: 1 1 45%;
+    gap: 40px;
+  }
