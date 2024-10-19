@@ -31,7 +31,8 @@ h2 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: auto;
+  width: 70%;
+  margin-left: 15%;
   gap: 30px;
   padding: 20px;
   height: 100vh;
