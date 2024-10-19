@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 25vh;
   }
 
 .search-card {
@@ -25,3 +25,28 @@ h2 {
     flex: 1 1 45%;
     gap: 40px;
   }
+
+.table-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: auto;
+  gap: 30px;
+  padding: 20px;
+  height: 100vh;
+}
+ 
+  table {
+    width: 80%;
+    margin-bottom: 20px;
+  }
+  
+  .mat-paginator {
+    width: 100%;
+  }
+  
+  th, td {
+    text-align: center;
+  }
+

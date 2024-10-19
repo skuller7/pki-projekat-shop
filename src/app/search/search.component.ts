@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router, RouterLink} from '@angular/router';
 import { SearchContainerComponent } from '../search-container/search-container.component';
 import { DataService } from '../data.service';
@@ -13,6 +13,9 @@ import {MatSelectModule} from '@angular/material/select';
 import { MatButton } from '@angular/material/button';
 import { NgFor } from '@angular/common';
 import Swal from 'sweetalert2'
+import {MatPaginator, MatPaginatorModule} from '@angular/material/paginator';
+import {MatTableDataSource, MatTableModule} from '@angular/material/table';
+
 
 
 
@@ -31,14 +34,16 @@ import Swal from 'sweetalert2'
     MatCardActions, 
     MatSelectModule, 
     MatButton, 
+    MatPaginator,
+    MatPaginatorModule,
+    MatTableModule,
     NgFor,
     RouterLink,
-    
   ],
   templateUrl: './search.component.html',
   styleUrl: './search.component.css'
 })
-export class SearchComponent implements OnInit{
+export class SearchComponent implements OnInit, AfterViewInit {
 
   public movieName: string [] = []
   public movieType: string [] = []
@@ -66,13 +71,22 @@ export class SearchComponent implements OnInit{
   public smovieRating : any [] | null = null
 
 
+
   constructor (private route: ActivatedRoute, private dataService: DataService) {
     
     this.dataService = new DataService()
   
   }
 
+  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
+  dataSource = new MatTableDataSource<ExampleElement>(ELEMENT_DATA);
   
+
+  ngAfterViewInit() {
+    
+  }
+
+
   
   ngOnInit(): void {
     this.route.queryParams.subscribe(params=>{
@@ -108,7 +122,7 @@ export class SearchComponent implements OnInit{
       position: "center",
       icon: "success",
       title: "Your work has been saved",
-      showConfirmButton: false,
+      showConfirmButton: true,
       timer: 1500
     });
   
@@ -116,3 +130,35 @@ export class SearchComponent implements OnInit{
 
 
 }
+
+
+export interface PeriodicElement {
+  name: string;
+  position: number;
+  weight: number;
+  symbol: string;
+}
+
+export interface ExampleElement {
+  Index: number;
+  MovieName: string;
+  MovieType: string;
+  MovieDuration: number;
+  
+}
+
+
+const ELEMENT_DATA: ExampleElement[] = [
+  {Index: 1, MovieName: 'Batman', MovieType: 'Drama', MovieDuration: 100},
+  {Index: 2, MovieName: 'Batman', MovieType: 'Drama', MovieDuration: 100},
+  {Index: 3, MovieName: 'Batman', MovieType: 'Drama', MovieDuration: 100},
+  {Index: 4, MovieName: 'Batman', MovieType: 'Drama', MovieDuration: 100},
+  {Index: 5, MovieName: 'Batman', MovieType: 'Drama', MovieDuration: 100},
+  {Index: 6, MovieName: 'Batman', MovieType: 'Drama', MovieDuration: 100},
+  {Index: 7, MovieName: 'Batman', MovieType: 'Drama', MovieDuration: 100},
+  {Index: 8, MovieName: 'Batman', MovieType: 'Drama', MovieDuration: 100},
+  {Index: 9, MovieName: 'Batman', MovieType: 'Drama', MovieDuration: 100},
+  {Index: 10, MovieName: 'Batman', MovieType: 'Drama', MovieDuration: 100},
+  
+
+];
