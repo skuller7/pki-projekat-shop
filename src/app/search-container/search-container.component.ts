@@ -8,7 +8,7 @@ import {MatInputModule} from '@angular/material/input';
 import { MatCardActions } from '@angular/material/card';
 import {MatSelectModule} from '@angular/material/select';
 import { MatButton } from '@angular/material/button';
-import { RouterLink } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { NgFor } from '@angular/common';
 
 
@@ -22,18 +22,36 @@ import { NgFor } from '@angular/common';
 export class SearchContainerComponent {
   @Input() movieName : string[] | undefined
   @Input() movieType : string[] | undefined
-  @Input() movieActors : string[] | undefined
-  @Input() movieDirector : string[] | undefined
   @Input() movieDuration : any[] | undefined
+  @Input() movieDirector : string[] | undefined
+  @Input() movieActors : string[] | undefined
   @Input() moviePrice : any[] | undefined
   @Input() movieRating : any[] | undefined
   
-  @Input() defaultmovieName : string [] | null = null
-  @Input() defaultmovieType : string [] | null = null
-  @Input() defaultmovieDuration : any [] | null = null
-  @Input() defaultmovieDirector : string [] | null = null
-  @Input() defaultmovieActors : string [] | null = null
-  @Input() defaultmoviePrice : any [] | null = null
-  @Input() defaultmovieRating : any [] | null = null
+  public smovieName : string [] | null = null
+  public smovieType : string [] | null = null
+  public smovieDuration : any [] | null = null
+  public smovieDirector : string [] | null = null
+  public smovieActors : string [] | null = null
+  public smoviePrice : any [] | null = null
+  public smovieRating : any [] | null = null
+
+  constructor (
+    private router: Router,
+    private activeRoute: ActivatedRoute 
+  ) {}
+
+  public onChange() {
+
+  }
+
+  public doSearch () {
+    if (this.router.url != "/search") {
+      this.router.navigate(['/search'], {relativeTo: this.activeRoute} )
+    }
+    
+    console.log(this.smovieName, this.smovieType, this.smovieDuration, this.smovieDirector, this.smovieActors, this.smoviePrice, this.smovieRating);
+
+  }
 
 }
