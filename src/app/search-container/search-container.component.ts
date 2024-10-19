@@ -15,7 +15,19 @@ import { NgFor } from '@angular/common';
 @Component({
   selector: 'app-search-container',
   standalone: true,
-  imports: [MatButtonModule, MatCardModule, MatListModule, MatFormFieldModule, JsonPipe, MatInputModule, MatCardActions, MatSelectModule, MatButton, RouterLink, NgFor],
+  imports: [
+    MatButtonModule, 
+    MatCardModule, 
+    MatListModule, 
+    MatFormFieldModule, 
+    JsonPipe, 
+    MatInputModule, 
+    MatCardActions, 
+    MatSelectModule, 
+    MatButton, 
+    RouterLink, 
+    NgFor
+  ],
   templateUrl: './search-container.component.html',
   styleUrl: './search-container.component.css'
 })
