@@ -5,6 +5,7 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { SearchContainerComponent } from './search-container/search-container.component';
 import { SearchComponent } from './search/search.component';
+import { ProfileComponent } from './profile/profile.component';
 
 export const routes: Routes = [
     {path: '', component: HomeComponent },
@@ -13,5 +14,6 @@ export const routes: Routes = [
     {path: 'signup', component: SignupComponent},
     {path: 'search', component: SearchComponent},
     {path: 'search-container', component: SearchContainerComponent},
+    {path: 'profile', component: ProfileComponent},
     {path: '**', redirectTo: ''}
 ];

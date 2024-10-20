@@ -1,15 +1,32 @@
 import { Injectable } from '@angular/core';
 import { UserModel } from './model/user.model';
-import bcrypt from "bcrypt";
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
 
+  private static instance: UserService
+
+  private constructor() {
+  }
+  
+  public static getInstance() {
+    if (this.instance == null) 
+        this.instance = new UserService
+    return this.instance
+  }
+  
   private retriveAllUsers(): UserModel[] {
     let json = localStorage.getItem('users')
     if (json == null) {
+      const defaultUser = {
+        email: 'uros.zigic.22@singimail.rs',
+        name: 'Uros Zigic',
+        password: 'uroszigic'
+        
+      }
       localStorage.setItem('users', JSON.stringify([]))
       json = localStorage.getItem('users')
     }
@@ -18,8 +35,7 @@ export class UserService {
   }
 
   public createUser(model: UserModel) {
-    model.password = bcrypt.hashSync(model.password, 12)
-
+    
     const arr = this.retriveAllUsers()
     if (arr.find(user=>user.email = model.email))
       throw new Error('EMAIL_EXISTS')
@@ -31,7 +47,7 @@ export class UserService {
 
   public login(email: string, password: string) {
     const arr = this.retriveAllUsers()
-    const usr = arr.find(user => user.email== email && bcrypt.compareSync(password, user.password))
+    const usr = arr.find(user => user.email== email && password == user.password)
 
     if (usr == undefined)
       throw new Error('AUTHENTICATION_FAILED')
@@ -57,7 +73,7 @@ export class UserService {
 
   public changePassword(password: string) {
     const active = this.getCurrentUser()
-    active.password = bcrypt.hashSync(password, 12)
+    active.password = password
     const all = this.retriveAllUsers()
     
     // all.find(user=>user.email = usr.email)
@@ -77,9 +93,5 @@ export class UserService {
       sessionStorage.removeItem('active')
   }
 
-
-
-
-  constructor() { }
 
 }
