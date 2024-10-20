@@ -27,7 +27,7 @@ export class UserService {
         password: 'uroszigic'
         
       }
-      localStorage.setItem('users', JSON.stringify([]))
+      localStorage.setItem('users', JSON.stringify([defaultUser]))
       json = localStorage.getItem('users')
     }
 
@@ -37,12 +37,12 @@ export class UserService {
   public createUser(model: UserModel) {
     
     const arr = this.retriveAllUsers()
-    if (arr.find(user=>user.email = model.email))
+    if (arr.find(user=>user.email === model.email))
       throw new Error('EMAIL_EXISTS')
 
     arr.push(model)
     localStorage.setItem('users', JSON.stringify(arr))
-
+console.log('created user')
   }
 
   public login(email: string, password: string) {
@@ -54,6 +54,7 @@ export class UserService {
 
     sessionStorage.setItem('active', usr.email)
 
+    
   }
 
   public getCurrentUser() {
@@ -61,11 +62,11 @@ export class UserService {
       throw new Error('NO_ACTIVE_USER')
 
     const email = sessionStorage.getItem('active')
-    const arr = this.retriveAllUsers()
+    const arr = this.retriveAllUsers() 
     const usr = arr.find(user => user.email == email)
     
-    if (usr == undefined)
-      throw new Error('NO_ACTIVE_USER')
+     if (usr == undefined)
+       throw new Error('NO_ACTIVE_USER')
       
     return usr
 
@@ -93,5 +94,8 @@ export class UserService {
       sessionStorage.removeItem('active')
   }
 
+  
 
 }
+
+

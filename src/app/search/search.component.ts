@@ -150,16 +150,16 @@ export interface ExampleElement {
 
 
 const ELEMENT_DATA: ExampleElement[] = [
-  {Index: 1, MovieName: 'Batman', MovieType: 'Drama', MovieDuration: 100},
-  {Index: 2, MovieName: 'Batman', MovieType: 'Drama', MovieDuration: 100},
-  {Index: 3, MovieName: 'Batman', MovieType: 'Drama', MovieDuration: 100},
-  {Index: 4, MovieName: 'Batman', MovieType: 'Drama', MovieDuration: 100},
-  {Index: 5, MovieName: 'Batman', MovieType: 'Drama', MovieDuration: 100},
-  {Index: 6, MovieName: 'Batman', MovieType: 'Drama', MovieDuration: 100},
-  {Index: 7, MovieName: 'Batman', MovieType: 'Drama', MovieDuration: 100},
-  {Index: 8, MovieName: 'Batman', MovieType: 'Drama', MovieDuration: 100},
-  {Index: 9, MovieName: 'Batman', MovieType: 'Drama', MovieDuration: 100},
-  {Index: 10, MovieName: 'Batman', MovieType: 'Drama', MovieDuration: 100},
+  {Index: 1, MovieName: 'Batman 2', MovieType: 'Drama', MovieDuration: 100},
+  {Index: 2, MovieName: 'John Wick 3 Barabellum', MovieType: 'Action', MovieDuration: 115},
+  {Index: 3, MovieName: 'Justice League', MovieType: 'Action', MovieDuration: 120},
+  {Index: 4, MovieName: 'Matrix 2', MovieType: 'Action', MovieDuration: 100},
+  {Index: 5, MovieName: 'Insidious 3: The last Key', MovieType: 'Sci-Fi', MovieDuration: 18},
+  {Index: 6, MovieName: 'Interstellar I', MovieType: 'Sci-Fi', MovieDuration: 90},
+  {Index: 7, MovieName: 'Blade Runner 2049', MovieType: 'Action', MovieDuration: 120},
+  {Index: 8, MovieName: 'The Avengers', MovieType: 'Action', MovieDuration: 80},
+  {Index: 9, MovieName: 'Baby Driver', MovieType: 'Drama', MovieDuration: 200},
+  {Index: 10, MovieName: 'Joker 2019', MovieType: 'Drama', MovieDuration: 170},
   
 
 ];

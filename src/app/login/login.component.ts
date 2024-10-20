@@ -17,10 +17,10 @@ export class LoginComponent {
 
   public email: string = ''
   public password: string = ''
-  public UserService: UserService
+  public userService: UserService
 
   constructor(private router: Router, private route: ActivatedRoute) {
-    this.UserService = UserService.getInstance()
+    this.userService = UserService.getInstance()
   }
 
   public updateEmail(e: any) {
@@ -37,7 +37,7 @@ export class LoginComponent {
       return 
     }
     try {
-      this.UserService.login(this.email, this.password)
+      this.userService.login(this.email, this.password)
       this.router.navigate(['/profile'], {relativeTo: this.route})
 
     } catch (e) {

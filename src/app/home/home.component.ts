@@ -8,6 +8,8 @@ import {MatInputModule} from '@angular/material/input';
 import { MatCardActions } from '@angular/material/card';
 import {MatSelectModule} from '@angular/material/select';
 import { DataService } from '../data.service';
+import { RouterLink } from '@angular/router';
+
 
 
 
@@ -16,7 +18,7 @@ import { DataService } from '../data.service';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [MatCardModule, MatButtonModule, MatListModule, MatFormFieldModule, JsonPipe, MatInputModule, MatCardActions, MatSelectModule],
+  imports: [MatCardModule, MatButtonModule, MatListModule, MatFormFieldModule, JsonPipe, MatInputModule, MatCardActions, MatSelectModule, RouterLink],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })

@@ -1,27 +1,24 @@
 # PkiProjekatShop
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.6.
+Ovaj projekat je za implementaciju Digitalnog Saltera Bioskopa. 
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Tehnologije 
 
-## Code scaffolding
+Napravljen je u Angular, CLi verzije 18.2.6
+Koriscene su i [Angular Materials](https://material.angular.io), [SweetAlert2](https://sweetalert2.github.io), [FontsAwesome](https://fontawesome.com)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Struktura Aplikacije 
 
-## Build
+Aplikativni directory-umi su : 
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+    - src/app/home - Implementacija glavne Home componente
+    - src/app/about - Implementacija About API componente
+    - src/app/login - Implementacija Login Auth componente
+    - src/app/signup - Implementacija Signup Auth componente
+    - src/app/search - Implementacija Search componente
+    
 
-## Running unit tests
+## Pokretanje Aplikacije
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Izvrsiti `npm install` & `npm start`
