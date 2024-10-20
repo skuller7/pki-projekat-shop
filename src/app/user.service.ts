@@ -20,8 +20,10 @@ export class UserService {
   public createUser(model: UserModel) {
     model.password = bcrypt.hashSync(model.password, 12)
 
-
     const arr = this.retriveAllUsers()
+    if (arr.find(user=>user.email = model.email))
+      throw new Error('EMAIL_EXISTS')
+
     arr.push(model)
     localStorage.setItem('users', JSON.stringify(arr))
 
@@ -29,7 +31,7 @@ export class UserService {
 
   public login(email: string, password: string) {
     const arr = this.retriveAllUsers()
-    const usr = arr.find(user => bcrypt.compareSync(password, user.password))
+    const usr = arr.find(user => user.email== email && bcrypt.compareSync(password, user.password))
 
     if (usr == undefined)
       throw new Error('AUTHENTICATION_FAILED')
@@ -54,8 +56,17 @@ export class UserService {
   }
 
   public changePassword(password: string) {
-    const usr = this.getCurrentUser()
-    usr.password = bcrypt.hashSync(password, 12)
+    const active = this.getCurrentUser()
+    active.password = bcrypt.hashSync(password, 12)
+    const all = this.retriveAllUsers()
+    
+    // all.find(user=>user.email = usr.email)
+    for (let user of all)
+      if (user.email == active.email) {
+        user = active
+      }
+
+    localStorage.setItem('users', JSON.stringify(all))
 
   }
 
