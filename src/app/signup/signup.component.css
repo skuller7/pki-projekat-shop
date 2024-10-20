@@ -1,36 +1,51 @@
-.older-container {
-    background-size: cover;
-    height: 50vw;
-}
-
-.example-container {
+.container {
     display: flex;
     justify-content: center;
-    margin: auto;
-    margin-top: auto;
-    width: 60%;
-  }
+    align-items: center;
+    height: 70vh;
+}
 
-.search-card {
-    width: 50%;
-    margin-top: 300px;
+.h1class {
+    margin-top: 50px;
+    text-align: center;
+    font-size: xx-large;
+    font-weight: 1000;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 
-h2 {
-    color: white;
+.form-container {
+    width: 30%;
 }
 
+.signup-card {
+    padding: 20px;
+}
 
-.search-form {
-    min-width: 150px;
-    max-width: 500px;
+.signup-form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.full-width {
     width: 100%;
+    margin-bottom: 15px;
 }
 
-.search-form mat-form-field {
-    flex: 1 1 45%; /* Adjust width of each form field */
-    min-width: 150px;
-    max-width: 100%;
+.half-width {
+    width: 48%;
+    margin-bottom: 15px;
 }
+
+.account-type {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.terms {
+    margin-bottom: 15px;
+}
+
+
 

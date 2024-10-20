@@ -116,6 +116,7 @@ export class SearchComponent implements OnInit, AfterViewInit {
   }
 
   public doSearch () {
+    
     console.log(this.smovieName, this.smovieType, this.smovieDuration, this.smovieDirector, this.smovieActors, this.smoviePrice, this.smovieRating);
     
     Swal.fire({
