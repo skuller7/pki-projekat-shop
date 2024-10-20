@@ -7,13 +7,15 @@ import { MatSelect } from '@angular/material/select';
 import { MatCheckbox } from '@angular/material/checkbox';
 import { MatRadioButton, MatRadioGroup } from '@angular/material/radio';
 import Swal from 'sweetalert2'
+import { RouterLink } from '@angular/router';
+import { MatIcon } from '@angular/material/icon';
 
 
 
 @Component({
   selector: 'app-signup',
   standalone: true,
-  imports: [MatInputModule, MatCardContent, MatCard, MatFormFieldModule, MatOption, MatSelect, MatCardActions, MatCheckbox, MatRadioButton, MatRadioGroup ],
+  imports: [MatInputModule, MatCardContent, MatCard, MatFormFieldModule, MatOption, MatSelect, MatCardActions, MatCheckbox, MatRadioButton, MatRadioGroup, RouterLink, MatIcon],
   templateUrl: './signup.component.html',
   styleUrl: './signup.component.css'
 })
